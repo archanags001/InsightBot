@@ -89,7 +89,7 @@ def main():
         if user_query := st.chat_input():
             st.chat_message("user").write(user_query)
             system_instruction = f"Analyze this data: {df} \n\nQuestion: {user_query}"
-            model = genai.GenerativeModel('gemini-1.5-flash-latest', system_instruction=system_instruction)
+            model = genai.GenerativeModel('gemini-2.5-flash-latest', system_instruction=system_instruction)
             prompt = (f"If the answer requires generating code, include it in the response. "
                         f"Format the code in a JSON object under the key 'code' and text response under the key 'answer' . For example, if the user asks to "
                         f"plot a bar chart for column A, the JSON output should include the necessary pandas code "
